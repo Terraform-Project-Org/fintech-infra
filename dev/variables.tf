@@ -60,7 +60,7 @@ variable "instance_type" {
 variable "key_name" {
   description = "The key name for the instance"
   type        = string
-  default     = "key35.pem"
+  default     = "key35"
 }
 
 #Amazon Certificate Manager

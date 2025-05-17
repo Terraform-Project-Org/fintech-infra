@@ -1,7 +1,7 @@
 #region            = "us-east-1"
 ami_id            = "ami-0f9de6e2d2f067fca"
 instance_type     = "t2.medium"
-key_name          = "key35.pem"
+key_name          = "key35"
 security_group_id = "module.eks-client-node.eks_client_sg"
 subnet_id         = "module.vpc.public_subnets[0]"
 #db_name           = "sonarqube_db"
