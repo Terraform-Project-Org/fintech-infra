@@ -125,8 +125,8 @@ variable "namespaces" {
 }
 
 #output "debug_key_name" {
-  #description = "Used to debug the value of key_name"
-  #value       = var.key_name
+#description = "Used to debug the value of key_name"
+#value       = var.key_name
 #}
 
 
