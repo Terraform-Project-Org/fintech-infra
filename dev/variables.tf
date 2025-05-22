@@ -5,7 +5,7 @@
 
 variable "main-region" {
   type    = string
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 
@@ -15,12 +15,12 @@ variable "main-region" {
 
 variable "cluster_name" {
   type    = string
-  default = "dev-dominion-cluster"
+  default = "prod-dominion-cluster"
 }
 
 variable "rolearn" {
   description = "Add admin role to the aws-auth configmap"
-  default     = "arn:aws:iam::322266404742:role/terraform-create-role"
+  default     = "arn:aws:iam::334870576011:user/Terraform-user"
 }
 
 # ################################################################################
@@ -29,7 +29,7 @@ variable "rolearn" {
 
 variable "env_name" {
   type    = string
-  default = "dev"
+  default = "prod"
 }
 
 
@@ -51,7 +51,7 @@ variable "ami_id" {
   default     = ""
 }
 
-variable "client_instance_type" {
+variable "instance_type" {
   description = "The instance type for the Terraform node"
   type        = string
   default     = "t3.medium"
@@ -60,26 +60,26 @@ variable "client_instance_type" {
 variable "key_name" {
   description = "The key name for the instance"
   type        = string
-  default     = "class38_demo_key"
+  default     = "key35"
 }
 
 #Amazon Certificate Manager
 variable "domain_name" {
   description = "Primary domain name for the certificate"
   type        = string
-  default     = "dominionsystem.org"
+  default     = "dom-name.com"
 }
 
 variable "san_domains" {
   description = "Subject alternative names for the certificate"
   type        = list(string)
-  default     = ["*.dominionsystem.org"]
+  default     = ["*.dom-name.com"]
 }
 
 variable "route53_zone_id" {
   description = "Route 53 Hosted Zone ID"
   type        = string
-  default     = "Z05475331ZK00RPD27RX0" # Replace with actual Route 53 Zone ID
+  default     = "Z063766022WSVXGFUE5LM" # Replace with actual Route 53 Zone ID
 }
 
 
@@ -87,7 +87,7 @@ variable "route53_zone_id" {
 
 variable "aws_account_id" {
   description = "AWS Account ID"
-  default     = "999568710647"
+  default     = "334870576011"
 }
 
 variable "repositories" {

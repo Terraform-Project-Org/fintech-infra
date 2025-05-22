@@ -99,7 +99,8 @@ resource "aws_instance" "eks_client_node" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.eks_client_sg.id]
   iam_instance_profile   = aws_iam_instance_profile.eks_client_ssm_profile.name
-  key_name               = aws_key_pair.eks_client_key.key_name
+  key_name          = var.key_name
+  #key_name               = aws_key_pair.eks_client_key.key_name
   tags                   = var.tags
 
   root_block_device {
@@ -117,7 +118,7 @@ resource "aws_instance" "eks_client_node" {
 
 resource "aws_eip" "eks_client_eip" {
   instance = aws_instance.eks_client_node.id
-  vpc      = true
+  #vpc      = true
 
   depends_on = [
     aws_instance.eks_client_node
